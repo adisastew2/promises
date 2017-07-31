@@ -10,10 +10,8 @@ var pluckFirstLineFromFile = function (filePath, cb) {
 
   fs.readFile(filePath, 'utf8', (err, content) =>{ 
     if (err) {
-      // console.log('fs.readFile failed :(\n', err);
       cb(err, null);
     } else {
-      // console.log('fs.readFile successfully completed :)\n', content);
       var firstLine = content.split('\n');
       cb(err, firstLine[0]);
     }
@@ -30,8 +28,8 @@ var getStatusCode = function (url, cb) {
     } else {
       cb(null, res.statusCode);
     }
-  
   });
+  
 };
 
 // Export these functions so we can test them and reuse them in later exercises
